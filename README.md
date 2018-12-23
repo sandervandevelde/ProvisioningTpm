@@ -19,6 +19,7 @@ This tool should be working both on Windows and Linux due to the usage of .Net C
 This tool is tested on:
 
 - Windows 10 Enterprise 1809
+- Ubuntu 18.04
 
 ## Credits
 
