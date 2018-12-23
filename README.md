@@ -4,7 +4,7 @@
  
 Pass Device Provisioning Service ID_Scope and RegistrationID as a command-prompt argument
 
-Usage: ProvisionTpm <IDScope> <RegistrationID>
+Usage: ProvisionTpm \<IDScope\> \<RegistrationID\>
 
 *Note*: Run this 'As Adminsitrator'
  
