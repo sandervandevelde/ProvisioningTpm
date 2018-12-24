@@ -16,13 +16,17 @@
 
         // - pass an individual enrollment registration id for this device
         private static string _registrationId = string.Empty;
+
+        // - If you want to skip the device message send test, pass 'Y'
+        private static string _skipTest = string.Empty;
+
         private const string GlobalDeviceEndpoint = "global.azure-devices-provisioning.net";
         
         public static int Main(string[] args)
         {
             Console.WriteLine("Provision your TPM");
             Console.WriteLine("------------------");
-            Console.WriteLine("Usage: ProvisionTpm <IDScope> <RegistrationID>");
+            Console.WriteLine("Usage: ProvisionTpm <IDScope> <RegistrationID> <SkipTest:Y|N>");
             Console.WriteLine("Run this 'As Adminsitrator'");
 
             if (string.IsNullOrWhiteSpace(_idScope) && (args.Length > 0))
@@ -35,10 +39,16 @@
                 _registrationId = args[1];
             }
 
-            if (string.IsNullOrWhiteSpace(_idScope)
-                    || string.IsNullOrWhiteSpace(_registrationId))
+            if (string.IsNullOrWhiteSpace(_skipTest) && (args.Length > 2))
             {
-                Console.WriteLine("Check if the parameters are corrent: ProvisionTpm <IDScope> <RegistrationID>");
+                _skipTest = args[2].ToUpper();
+            }
+
+            if (string.IsNullOrWhiteSpace(_idScope)
+                    || string.IsNullOrWhiteSpace(_registrationId)
+                    || string.IsNullOrWhiteSpace(_skipTest))
+            {
+                Console.WriteLine("Check if the parameters are corrent: ProvisionTpm <IDScope> <RegistrationID> <SkipTest:Y|N>");
                 return 1;
             }
 
@@ -67,11 +77,15 @@
                 ProvisioningDeviceClient provClient =
                     ProvisioningDeviceClient.Create(GlobalDeviceEndpoint, _idScope, security, transport);
 
-                var client = new ProvisioningDeviceTpmClient(provClient, security);
+                var client = new ProvisioningDeviceTpmClient(provClient, security, _skipTest);
                 client.RunTestAsync().GetAwaiter().GetResult();
 
                 Console.WriteLine("The registration is finalized on the TPM");
-                Console.WriteLine("The connection is tested by sending a test message");
+
+                if (_skipTest != "Y")
+                {
+                    Console.WriteLine("The connection is tested by sending a test message");
+                }
             }
 
             return 0;

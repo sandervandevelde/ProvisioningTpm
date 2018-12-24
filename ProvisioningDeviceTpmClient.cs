@@ -15,11 +15,13 @@ namespace ProvisioningTpm
     {
         ProvisioningDeviceClient _provClient;
         SecurityProvider _security;
+        string _skipTest;
 
-        public ProvisioningDeviceTpmClient(ProvisioningDeviceClient provisioningDeviceClient, SecurityProvider security)
+        public ProvisioningDeviceTpmClient(ProvisioningDeviceClient provisioningDeviceClient, SecurityProvider security, string skipTest)
         {
             _provClient = provisioningDeviceClient;
             _security = security;
+            _skipTest = skipTest;
         }
 
         public async Task RunTestAsync()
@@ -51,14 +53,17 @@ namespace ProvisioningTpm
                 throw new NotSupportedException("Unknown authentication type.");
             }
 
-            using (DeviceClient iotClient = DeviceClient.Create(result.AssignedHub, auth, TransportType.Amqp))
+            if (_skipTest != "Y")
             {
-                Console.WriteLine("DeviceClient OpenAsync.");
-                await iotClient.OpenAsync().ConfigureAwait(false);
-                Console.WriteLine("DeviceClient SendEventAsync TpmTestMessage.");
-                await iotClient.SendEventAsync(new Message(Encoding.UTF8.GetBytes("TpmTestMessage"))).ConfigureAwait(false);
-                Console.WriteLine("DeviceClient CloseAsync.");
-                await iotClient.CloseAsync().ConfigureAwait(false);
+                using (DeviceClient iotClient = DeviceClient.Create(result.AssignedHub, auth, TransportType.Amqp))
+                {
+                    Console.WriteLine("DeviceClient OpenAsync.");
+                    await iotClient.OpenAsync().ConfigureAwait(false);
+                    Console.WriteLine("DeviceClient SendEventAsync TpmTestMessage.");
+                    await iotClient.SendEventAsync(new Message(Encoding.UTF8.GetBytes("TpmTestMessage"))).ConfigureAwait(false);
+                    Console.WriteLine("DeviceClient CloseAsync.");
+                    await iotClient.CloseAsync().ConfigureAwait(false);
+                }
             }
         }
 

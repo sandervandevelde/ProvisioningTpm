@@ -2,13 +2,13 @@
 
 ## Introduction
 
-This executable helps you to register your device TPM as an individual enrollment on a Azure Device Provisioning Service. 
+This executable helps you to register your device TPM as an individual enrollment on a Azure Device Provisioning Service.
 
 ## Usage
 
 Pass Device Provisioning Service ID_Scope and RegistrationID as a command-prompt argument
 
-Usage: ProvisionTpm \<IDScope\> \<RegistrationID\>
+Usage: ProvisionTpm \<IDScope\> \<RegistrationID\> \<SkipTest:Y\N\>
 
 *Note*: Run this 'As Adminsitrator'
 
@@ -23,4 +23,4 @@ This tool is tested on:
 
 ## Credits
 
-This example is based on: https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device
+This example is based on: [https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device)
