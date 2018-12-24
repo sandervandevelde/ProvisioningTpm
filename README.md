@@ -23,4 +23,4 @@ This tool is tested on:
 
 ## Credits
 
-This example is based on: [https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device)
+This example is based on the TPM Example in: [https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device)
