@@ -34,4 +34,4 @@ then check if you are running it as Adminsitrator or 'SU'.
 
 ## Credits
 
-This example is based on the TPM Example in: [https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device)
+This example is based on the TPM Example in: [github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device)
