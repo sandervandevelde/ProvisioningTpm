@@ -8,7 +8,7 @@ This executable helps you to register your device TPM as an individual enrollmen
 
 Pass Device Provisioning Service ID_Scope and RegistrationID as a command-prompt argument
 
-Usage: ProvisionTpm \<IDScope\> \<RegistrationID\> \<SkipTest:Y\N\>
+Usage: ProvisionTpm \<IDScope\> \<RegistrationID\> \<SkipTest:Y|N\>
 
 *Note*: Run this 'As Adminsitrator'
 
