@@ -24,6 +24,14 @@ This tool is tested on:
 - Windows 10 IoT Enterprise 1809
 - Ubuntu 18.04
 
+## Exceptions
+
+If you get this 'TbsCommandBlocked' execption during the execution of the application:
+
+    Unhandled Exception: Microsoft.Azure.Devices.Provisioning.Client.ProvisioningTransportException: AMQP transport exception ---> Tpm2Lib.TpmException: Error {TbsCommandBlocked} was returned for command ActivateCredential.
+
+then check if you are running it as Adminsitrator or 'SU'.
+
 ## Credits
 
 This example is based on the TPM Example in: [https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device)
