@@ -41,7 +41,7 @@ The application is divided in two steps:
     5. Set IoT Hub Device ID to the RegistrationId or any other valid DeviceID
     6. Check if the correct IoT Hub is selected
 7. Save this individual enrollment
-8. Within the application, press a key.
+8. Within the application, press a key
 9. See how the applicaiton ends
 
 Within the Azure portal, see that the device is registered now.
