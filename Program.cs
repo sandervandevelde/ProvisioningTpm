@@ -27,7 +27,7 @@
             Console.WriteLine("Provision your TPM");
             Console.WriteLine("------------------");
             Console.WriteLine("Usage: ProvisionTpm <IDScope> <RegistrationID> <SkipTest:Y|N>");
-            Console.WriteLine("Run this 'As Adminsitrator'");
+            Console.WriteLine("Run this 'As Adminsitrator' or 'SU'");
 
             if (string.IsNullOrWhiteSpace(_idScope) && (args.Length > 0))
             {
