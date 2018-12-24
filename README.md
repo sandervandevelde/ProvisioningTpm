@@ -1,4 +1,6 @@
-﻿# ProvisioningTpm
+# Provision your Azure IoT Edge device using a TPM
+
+Make use of the TPM 2.0 in your Azure IoT Edge device to provision it using a Azure Device Provisioning Service.
 
 ## Introduction
 
@@ -19,6 +21,7 @@ This tool should be working both on Windows and Linux due to the usage of .Net C
 This tool is tested on:
 
 - Windows 10 Enterprise 1809
+- Windows 10 IoT Enterprise 1809
 - Ubuntu 18.04
 
 ## Credits
