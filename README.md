@@ -23,6 +23,7 @@ The follow prerequisites are in place:
 3. Have a DPS created within your Azure subscription
 4. Get the ID Scope of your DPS
 5. Create a unique RegistrationID for your device
+6. Enable Windows feature for Containers or have Docker CE installed (needed at runtime)
 
 ## Flow
 
